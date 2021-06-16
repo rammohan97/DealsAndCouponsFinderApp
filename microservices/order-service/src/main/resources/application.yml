@@ -1,0 +1,13 @@
+server:
+  port: 20002
+
+spring:
+  h2:
+    console:
+      enabled: true
+  application:
+    name: ORDER-SERVICE
+
+logging:
+  pattern:
+    file: C:/Users/Veeranjineyulu/Desktop/micro-services-logs.log

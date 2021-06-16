@@ -1,0 +1,77 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/orderController/**
+          filters:
+            -  AuthFilter
+
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/productsController/**
+          filters:
+            -  AuthFilter
+        - id: service-users-sign-in
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/users/**
+        - id: coupon-service
+          uri: lb://COUPON-SERVICE
+          predicates:
+              - Path=/administrator/**
+          filters:
+            - AuthFilter
+        - id: coupon-service
+          uri: lb://COUPON-SERVICE
+          predicates:
+              - Path=/companyController/**
+          filters:
+              - AuthFilter
+        - id: coupon-service
+          uri: lb://COUPON-SERVICE
+          predicates:
+              - Path=/customerController/**
+          filters:
+              - AuthFilter
+
+
+
+server:
+  port: 20003
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 50000

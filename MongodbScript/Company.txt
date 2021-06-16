@@ -1,0 +1,12 @@
+use CoupnsandDeals
+db.company.insert(
+[{
+  "_id": {
+    "$oid": "60bdcc0f2b5f91b5e0ecef24"
+  },
+  "id": "109",
+  "name": "deals_discout",
+  "email": "deals@org.com",
+  "password": "12345",
+  "coupon": "valid"
+}])

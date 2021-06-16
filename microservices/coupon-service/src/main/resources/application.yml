@@ -1,0 +1,11 @@
+server:
+  port: 20001
+
+spring:
+  h2:
+    console:
+      enabled: true
+  application:
+    name: COUPON-SERVICE
+
+

@@ -1,0 +1,12 @@
+server:
+  port: 8761
+spring:
+  h2:
+    console:
+      enabled: true
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    healthcheck:
+      enabled: true

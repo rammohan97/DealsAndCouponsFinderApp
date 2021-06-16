@@ -1,0 +1,23 @@
+use CoupnsandDeals
+
+db.companies.insertmany(
+[{
+  "_id": {
+    "$oid": "60bdb24120d84b2d8c414839"
+  },
+  "id": "123",
+  "email": "rama@gmail.com",
+  "name": "Rama",
+  "password": "Rama123"
+},
+{
+  "_id": {
+    "$oid": "60bdb24120d84b2d8c413456"
+  },
+  "id": "564",
+  "email": "harika@gmail.com",
+  "name": "harika",
+  "password": "har4567"
+},
+
+])

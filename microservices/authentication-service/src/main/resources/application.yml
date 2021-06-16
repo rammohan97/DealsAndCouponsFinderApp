@@ -1,0 +1,13 @@
+server:
+  port: 20006
+spring:
+  application:
+    name: AUTH-SERVICE
+  data:
+    mongodb:
+      host : localhost
+      port : 27017
+      database: auth-service
+  h2:
+    console:
+      enabled: true

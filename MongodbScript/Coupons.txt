@@ -1,0 +1,27 @@
+use CouponsanDeals
+db.coupons.insertmany(
+[{
+  "_id": {
+    "$oid": "60bdce0c20d84b2d8c41483a"
+  },
+  "id": "3344",
+  "amount": "899",
+  "category_id": "4090",
+  "companyid": "2345",
+  "description": "subscription valid untill next 3 months",
+  "end-date": "3-4-2012",
+  "image": "C://USers/DELL/Coupons/product1.img",
+  "price": "340"
+},{
+  "_id": {
+    "$oid": "60bdcf0520d84b2d8c41483b"
+  },
+  "id": "0099",
+  "amount": 599,
+  "category_id": "3458",
+  "company_id": "1432",
+  "description": "coupons valid until till date",
+  "end_date": "14-6-2009",
+  "image": "C://DELL/users/products2.img",
+  "price": "599"
+}])
